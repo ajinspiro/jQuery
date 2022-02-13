@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM manipulation jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+    <style>
+        html {
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Friends</h2>
+    <ul>
+        <li>Arun <button type="button" class="remove-btn">x</button> </li>
+        <li>Ananthan Unni <button type="button" class="remove-btn">x</button> </li>
+    </ul>
+
+    <form>
+        <label>
+            Add friend (append)
+            <input name="fullname" required id="fullname" />
+        </label>
+        <button type="submit">Add</button>
+    </form>
+
+    <!-- append() - Inserts content to the end of element(s) which is specified by a selector.
+    before() - Inserts content (new or existing DOM elements) before an element(s) which is specified by a selector.
+    after() - Inserts content (new or existing DOM elements) after an element(s) which is specified by a selector.
+    prepend() - Insert content at the beginning of an element(s) specified by a selector.
+    remove() - Removes element(s) from DOM which is specified by selector.
+    replaceAll() - Replace target element(s) with specified element.
+    wrap() - Wrap an HTML structure around each element which is specified by selector. -->
+
+    <script>
+        $('form').on('submit', function (event) {
+            event.preventDefault()
+            let fullname = $('#fullname').val()
+            $('ul').append(`<li>${fullname} <button type="button" class="remove-btn">x</button> </li>`)
+        })
+
+        $(document).on('click', '.remove-btn', function (event) {
+            let liElementToRemove = event.target.parentElement
+            $(liElementToRemove).remove()
+        })
+
+    </script>
+</body>
+
+</html>

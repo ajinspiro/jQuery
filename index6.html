@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jq element selector</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <style>
+        html {
+            font-size: 22px;
+        }
+
+        .container {
+            border: 1px solid black;
+            padding: 1rem 0;
+            display: flex;
+            justify-content: space-around;
+            justify-items: center;
+        }
+
+        .container>div {
+            border: 1px solid black;
+            padding: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="left">
+            left content
+        </div>
+        <span></span>
+        <div class="right">
+            right content
+        </div>
+    </div>
+
+    <div class="center" red-color>
+        outside center
+    </div>
+
+    <div class="right">
+        outside right
+    </div>
+
+
+    <div class="blue-container">
+        <div class="blue">1</div>
+        <div class="blue">2</div>
+        <div class="blue">3</div>
+        <div class="blue">4</div>
+    </div>
+
+    <div class="blue-container">
+        <div class="blue">1</div>
+        <div class="blue">2</div>
+        <div class="blue">3</div>
+        <div class="blue">4</div>
+    </div>
+
+    <script>
+        var el1 = $('div')
+        var el2 = $('.container .right')
+        var el3 = $('.left+.right')
+        var el4 = $('[red-color]')
+        var el5 = $('.left~.right')
+        var el6 = $('.blue:first-child')
+        var el7 = $('.blue:last-child')
+        var el8 = $('.blue:nth-child(3)')
+
+        console.log(el1, el2, el3, el4, el5, el6, el7, el8)
+    </script>
+
+</body>
+
+</html>

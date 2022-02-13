@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hoisting</title>
+    <style>
+        html {
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="demo"></div>
+
+    <script>
+        x = 5; // Assign 5 to x
+
+        elem = document.getElementById("demo"); // Find an element
+        elem.innerHTML = x;                     // Display x in the element
+
+        let  x; // Declare x 
+    </script>
+
+</body>
+
+</html>

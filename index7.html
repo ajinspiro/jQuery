@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM manipulation native javascript</title>
+     
+    <style>
+        html {
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Friends</h2>
+    <ul>
+        <li>Arun</li>
+        <li>Ananthan Unni</li>
+    </ul>
+
+    <form>
+        <label>
+            Add friend
+            <input name="fullname" required id="fullname" />
+        </label>
+        <button type="submit">Add</button>
+    </form>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            let fullname = document.querySelector('#fullname').value
+            let liEl = document.createElement('li')
+            liEl.innerHTML = `<li>${fullname}</li>`
+            document.querySelector('ul').appendChild(liEl)
+        })
+    </script>
+</body>
+
+</html>

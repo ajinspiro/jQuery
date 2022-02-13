@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Style manipulation jQuery </title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+    <style>
+        html {
+            font-size: 1.5rem;
+        }
+
+        h1 {
+            border: 1px solid;
+            max-width: max-content;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Aa</h1>
+
+    Change color: 
+    <button type="button" id="color-red">red</button>
+    <button type="button" id="color-green">green</button>
+    <button type="button" id="color-blue">blue</button>
+
+    <script>
+        $('#color-red').click(function (event) {
+            $('h1').css('color', '#f42929')
+        })
+        $('#color-green').click(function (event) {
+            $('h1').css('color', '#1eb41e')
+        })
+        $('#color-blue').click(function (event) {
+            $('h1').css('color', '#0593e7')
+        })
+    </script>
+</body>
+
+</html>
